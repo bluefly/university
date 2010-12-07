@@ -6,12 +6,6 @@ def usage():
     print "%s <precision, e.g. 10**-2> <value of function to compute> <highest Taylor degree to try>" % __file__
     sys.exit(1)
 
-def derivative(f):
-    def df(x, h=0.1e-5):
-        return (f(x+h/2) - f(x-h/2)) / h
-
-    return df
-
 def main():
     func = lambda x: mpmath.exp(mpmath.power(x, 2))
     precision = sys.argv[1].split('**')
